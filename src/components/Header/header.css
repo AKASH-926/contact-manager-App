@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+#header-wrap{
+position: absolute;
+    width: 85%;
+    height: 55px;
+    left: 231px;
+    top: 0px;
+    background: #FFFFFF;
+    border-bottom: 2px solid #EAEAEA;
+    font-family: 'Titillium Web', sans-serif;
+}
+#total-contact{
+    position: absolute;
+        width: 194px;
+        height: 49px;
+        left: 2%;
+        top: 12px;
+        font-family: 'Titillium Web';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        margin: 0;
+        color: #454545;
+        opacity: 0.8;
+}
+#search{
+    position: absolute;
+        width: 300px;
+        height: 30px;
+        left: 48%;
+        top: 12px;
+        background: #F2F2F2;
+        border-radius: 6px;
+            padding-left: 30px;
+}
+#search-inp{
+ position: relative;
+ width: 300px;
+height: 30px;
+ border: none;
+ background-color: #F2F2F2;
+top: -24px;
+   
+}
+#search-icon{
+    position: relative;
+        left: -7%;
+        top: 6px;
+}
+#admin{
+ position: absolute;
+ width: 80px;
+height: 20px;
+ left: 88%;
+top: 12px;
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+align-content: stretch;
+justify-content: center;
+        
+}
+#admin-name{
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    margin-left: 5px;
+    color: black;
+}
+#admin-name span:nth-child(2){
+    color: grey;
+}
