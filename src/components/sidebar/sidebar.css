@@ -38,7 +38,6 @@ padding-left: 8px;
 cursor: pointer;
 }
 #dashboard-cont-select{
-    border: 1px solid #2DA5FC;
         background-color: #2DA5FC;
         color: white;
         border-radius: 6px;
@@ -47,6 +46,7 @@ cursor: pointer;
             margin-bottom: 10%;
             height: 50px;
             padding-left: 8px;
+            transition: 800ms;
 }
 #contact-cont{
         position: relative;
@@ -57,7 +57,6 @@ cursor: pointer;
             cursor: pointer;
 }
 #contact-cont-select{
-    border: 1px solid #2DA5FC;
     background-color: #2DA5FC;
     color: white;
     border-radius: 6px;
@@ -66,6 +65,7 @@ cursor: pointer;
         height: 50px;
         width: 150px;
         padding-left: 8px;
+        transition: 800ms;
 }
 #logout{
     position: relative;

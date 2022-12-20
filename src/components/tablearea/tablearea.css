@@ -1,0 +1,9 @@
+#tablearea-wrap{
+    position: absolute;
+        width: 81%;
+        height: 80%;
+        left: 250px;
+        top: 72px;
+        background: #ebeaeaa9;
+        border-radius: 15px;
+}
