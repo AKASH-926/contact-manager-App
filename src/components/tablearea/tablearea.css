@@ -7,3 +7,9 @@
         background: #ebeaeaa9;
         border-radius: 15px;
 }
+#table-container{
+    border: 1px solid black;
+    margin-top: 45px;
+    margin-left: 2%;
+    margin-right: 1%
+}
