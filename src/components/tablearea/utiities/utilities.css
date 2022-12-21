@@ -73,6 +73,10 @@ transition: 112ms;
 #uti-date{
     width: 110px;
 }
+#uti-date>span{
+    font-size: small;
+    margin-right: 5px;
+}
 #uti-date:hover{
     background-color: white;
         transform: scale(1);

@@ -15,6 +15,7 @@
     color:#0884FF ;
     display: flex;
     justify-content: center;
+    font-weight: 800;
 }
 .Sidebar-options{
     font-size: 15px;

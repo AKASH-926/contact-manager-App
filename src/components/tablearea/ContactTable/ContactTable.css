@@ -1,39 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
-#contactTable-wrap{
 
-}
 #table-wrap{
     width: 100%;
+    border-radius: 10px;
 }
-th,td{
+
+#head-wrap{
     text-align:left;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 14px;
-
-  
-}
-#head-wrap{
+    font-size: 14px; 
     height: 40px;
-    background-color: lightblue;
+        background-color: #B3DFFF;;
+}
 
-    
+.border-left-radius{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
-tr{
-padding: 0;
-border-spacing: 0;
-border-collapse: collapse;
-margin: 0;
-box-sizing: border-box;
+.border-right-radius{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
-/* .No-width{
-    width: 0;
+.head-border{
+    border-radius: 10px;
+    border-top: 1px solid black;
 }
-.width-7{
-   margin-left: 7%;
+.table-content-wrap{
+    text-align: left;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 14px;
+        height: 40px;
 }
-.width-10{
-    width: 11%;
+.table-content-wrap>td{
+    margin-left: 10px;
 }
-.width-9{
-    width: 11%;
-} */
+#table-rows tr:nth-child(even){
+    background-color: rgba(178, 223, 255, 0.31);
+}
+.edit-del-icon>img{
+width: 17px;
+margin-left: 5px;
+cursor: pointer;
+}
