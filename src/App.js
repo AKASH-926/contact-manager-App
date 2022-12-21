@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Signup from './components/signup/Signup';
 import Login from './components/Login/Login';
 import Protected_route from './components/Protected_routes/Protected_route';
+import ContactProvider from './components/Context/ContactProvider';
 function App() {
   return (
     <>
@@ -13,7 +14,12 @@ function App() {
           <Route path='/' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route element={<Protected_route />}>
-            <Route path='/contacts' element={<ContactPage />} />
+            <Route path='/contacts' element={
+              <ContactProvider>
+                <ContactPage />
+              </ContactProvider>
+
+            } />
           </Route>
         </Routes>
       </BrowserRouter>

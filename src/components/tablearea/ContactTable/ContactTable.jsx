@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./ContactTable.css"
-import axios from 'axios'
+// import axios from 'axios'
+import ContactContext from '../../Context/ContactContext'
 export default function ContactTable() {
 
-    const [contact, setcontact] = useState([])
-    const header = window.localStorage.getItem("jwt")
+    const contact = useContext(ContactContext)
 
-    useEffect(() => {
-        axios.get("http://localhost:8000/contacts", { headers: { authorization: header } }).then((response) => { setcontact([...response.data.contacts]) }
-        )
-    }, [])
-    // console.log(contact)
+
     return (
         <div id='contactTable-wrap'>
             <table id='table-wrap' cellSpacing={0}>
@@ -45,7 +41,7 @@ export default function ContactTable() {
                     {
                         contact.map((value, i) => {
                             return (
-                                <tr className='table-content-wrap'>
+                                <tr className='table-content-wrap' key={i}>
                                     <td><div><input type="checkbox" name="" id="" /></div></td>
                                     <td>{value.Name}</td>
                                     <td>{value.Designation}</td>
