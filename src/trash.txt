@@ -57,3 +57,79 @@ Header.jsx
     //             <span>Super Admin</span></div></div>
     //     </div>
     // )
+
+
+    <ul id='querylist'>
+                    {((searchquery.length == 0)) ?
+                        <li>
+                            <img className='search-icon' src="/search.png" alt="" /> <span className='searchitem'>No contacts found..</span>
+                        </li> : searchquery.map((item, i) => {
+                            return (
+                                <li key={i} onClick={() => { handledisplay(item) }}>
+                                    <img className='search-icon' src="/search.png" alt="" /> <span className='searchitem'>{item.Email}</span>
+                                </li>
+                            )
+                        })}
+
+                </ul>
+
+
+Pagination
+    // let pages = Math.ceil(contactdata.length / 5)
+    // const [svar, setsvar] = useState({ i: 0, j: 5 })
+    // const [currpageno, setcurrpageno] = useState({ prev: 1, next: 2 })
+    // // const [currPage, setcurrPage] = useState(contactdata.slice())
+
+    // // let currpageno = 1
+    // useEffect(() => {
+    //     setpagedcontact(contactdata.slice(svar.i, svar.j))
+    //     console.log(contactdata.slice(svar.i, svar.j))
+    //     console.log(svar.i, svar.j)
+    //     console.log(currpageno)
+    // }, [contactdata])
+    // useEffect(() => {
+    //     const handleprev = () => {
+
+    //         setsvar({ ...svar, i: svar.i - 5, j: svar.j - 5 })
+    //         setpagedcontact(contactdata.slice(svar.i, svar.j))
+    //         setcurrpageno(
+    //             currpageno - 1
+    //         )
+    //         console.log(currpageno)
+
+
+    //     }
+    //     handleprev()
+    // }, [currpageno.prev])
+    // useEffect(() => {
+    //     const handlenext = () => {
+
+
+    //         setsvar({ ...svar, i: svar.i + 5, j: svar.j + 5 })
+    //         setpagedcontact(contactdata.slice(svar.i, svar.j))
+    //         setcurrpageno(
+    //             currpageno + 1
+    //         )
+    //         console.log(currpageno)
+
+    //     }
+    //     handlenext()
+    // }, [currpageno.next])
+    // // let j = currpageno * 5
+    // // let i = j - 5
+    // // setpagedcontact(contactdata.slice(i, j))
+    // // const handleprev = (e) => {
+    // //     e.preventDefault()
+    // //     if (currpageno > 1) {
+    // //         currpageno += 1
+    // //         console.log(currpageno)
+
+    // //     }
+    // // }
+    // // const handlenext = (e) => {
+    // //     e.preventDefault()
+    // //     if (currpageno < pages) {
+    // //         currpageno -= 1
+    // //         console.log(currpageno)
+    // //     }
+    // // }

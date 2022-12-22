@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
-#header-wrap{
-position: absolute;
+#header-wrap {
+    position: absolute;
     width: 85%;
     height: 55px;
-    left: 231px;
+    left: 14%;
     top: 0px;
     background: #FFFFFF;
     border-bottom: 2px solid #EAEAEA;
@@ -31,6 +31,7 @@ position: absolute;
         top: 12px;
         background: #F2F2F2;
             padding-left: 30px;
+            border-radius: 8px;
 }
 #search-inp{
  position: relative;
@@ -39,35 +40,39 @@ height: 30px;
  border: none;
  background-color: #F2F2F2;
 top: -24px;
+font-size: small;
+border-radius: 8px;
    
 }
 
 .search-icon{
     position: relative;
         left: -7%;
-        top: 6px;
-        cursor: pointer;
-        transition: 112ms;
+        top: 2px;
 }
-.search-icon:hover{
-    transform: scale(1.5);
-}
+
 #querylist{
     background-color: #ffffff;
     padding: 0;
     padding-inline-start: 0px;
     padding-left: 14px;
+    font-size: medium;
 }
 #querylist>li{
     position: relative;
-    bottom: 40px;
-    right: 44px;
+    bottom: 25px;
+    right: 15%;
     list-style: none;
     z-index: 10;
-    width: 328px;
+    width: 330px;
     border: 1px solid #ffffff;
     background-color: #ffffff;
     cursor: pointer;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.141);
+   
+}
+#querylist>li:hover{
+    background-color: rgb(219, 237, 253);
 }
 #querylist>li>img{
     position: relative;

@@ -11,19 +11,21 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <ContactProvider>
-          <SearchProvider>
-            <Routes>
-              <Route path='/' element={<Signup />} />
-              <Route path='/login' element={<Login />} />
-              <Route element={<Protected_route />}>
-                <Route path='/contacts' element={
+
+        <Routes>
+          <Route path='/' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
+          <Route element={<Protected_route />}>
+            <Route path='/contacts' element={
+              <ContactProvider>
+                <SearchProvider>
                   <ContactPage />
-                } />
-              </Route>
-            </Routes>
-          </SearchProvider>
-        </ContactProvider>
+                </SearchProvider>
+              </ContactProvider>
+            } />
+          </Route>
+        </Routes>
+
 
       </BrowserRouter>
 

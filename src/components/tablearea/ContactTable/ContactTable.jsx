@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-
+import { Tooltip as ReactTooltip } from 'react-tooltip'
 import "./ContactTable.css"
 import { ContactContext, SearchContext } from '../../Context/ContactContext'
 export default function ContactTable() {
 
-    const contact = useContext(ContactContext)
+    const { contactdata, setcontactdata, pagedcontact, setpagedcontact } = useContext(ContactContext)
     const { searchdata, isSearch } = useContext(SearchContext)
     // console.log(searchdata)
     return (
@@ -46,14 +46,14 @@ export default function ContactTable() {
                             <td>{searchdata.Designation}</td>
                             <td>{searchdata.Industry}</td>
                             <td>{searchdata.Company}</td>
-                            <td>{searchdata.Email}</td>
+                            <td >{searchdata.Email}</td>
                             <td>{searchdata.Phone_number}</td>
                             <td>{searchdata.Country}</td>
                             <td><div className='edit-del-icon'>
                                 <img src="/pencil.png" alt="pencil" />  <img src="/trash.png" alt="trash" />
                             </div></td>
                         </tr>
-                        : contact.map((value, i) => {
+                        : pagedcontact.map((value, i) => {
                             return (
                                 <tr className='table-content-wrap' key={i}>
                                     <td><div><input type="checkbox" name="" id="" /></div></td>
@@ -61,7 +61,7 @@ export default function ContactTable() {
                                     <td>{value.Designation}</td>
                                     <td>{value.Industry}</td>
                                     <td>{value.Company}</td>
-                                    <td>{value.Email}</td>
+                                    <td title={value.Email}>{value.Email}</td>
                                     <td>{value.Phone_number}</td>
                                     <td>{value.Country}</td>
                                     <td><div className='edit-del-icon'>

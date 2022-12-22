@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { SearchContext } from './ContactContext'
 
 export default function SearchProvider({ children }) {
-    const [searchdata, setsearchdata] = useState()
+    const [searchdata, setsearchdata] = useState("")
     const [isSearch, setisSearch] = useState(false)
     return (
         <>

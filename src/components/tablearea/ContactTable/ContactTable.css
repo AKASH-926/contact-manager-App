@@ -8,9 +8,10 @@
 #head-wrap{
     text-align:left;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 14px; 
+    font-size: 16px; 
     height: 40px;
         background-color: #B3DFFF;;
+       
 }
 
 .border-left-radius{
@@ -33,6 +34,7 @@
 }
 .table-content-wrap>td{
     margin-left: 10px;
+    font-weight: bold;
 }
 #table-rows tr:nth-child(even){
     background-color: rgba(178, 223, 255, 0.31);

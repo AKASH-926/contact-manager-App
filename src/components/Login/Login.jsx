@@ -26,13 +26,13 @@ function Login() {
                 password
             }
         }).then(res => {
-            console.log(res);
-            console.log(res.data.token);
-            console.log("Logged In");
+            // console.log(res);
+            // console.log(res.data.token);
+            // console.log("Logged In");
             navigate('/contacts');
             window.localStorage.setItem('jwt', res.data.token);
         }).catch(e => {
-            console.log(e.message);
+            // console.log(e.message);
             setEmail('')
             setPassword('')
             navigate('/');
