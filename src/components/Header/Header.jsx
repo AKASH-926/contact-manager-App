@@ -1,17 +1,19 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./header.css"
-import axios from "axios"
 
-import ContactContext from '../Context/ContactContext'
+
+import { ContactContext, SearchContext } from '../Context/ContactContext'
 export default function Header() {
     const [searchquery, setsearchquery] = useState([])
     const token = window.localStorage.getItem('jwt')
     const contact = useContext(ContactContext)
-    // console.log(contact)
-    const handledisplay = (email) => {
-        console.log(email)
+    const { setsearchdata, setisSearch } = useContext(SearchContext)
+    const handledisplay = (item) => {
+        if (token) {
+            setsearchdata(item)
+            setisSearch(true)
+        }
     }
-
     return (
         <div id='header-wrap'>
             <div id='total-contact'>Total Contacts</div>
@@ -19,10 +21,14 @@ export default function Header() {
             <div id='search'>  <img className='search-icon' src="/search.png" alt="" onClick={() => {
 
             }} /> <input type="search" placeholder='Serach contact by Email ID..' name="search" id="search-inp" onChange={(e) => {
+
                 let query = contact.map((item) => {
                     if (item.Email.includes(e.target.value) && e.target.value !== "" && e.target.value.length >= 3) {
                         return (item)
+                    } else if (e.target.value === "") {
+                        setisSearch(false)
                     }
+                    return undefined
                 })
                 let filterquery = query.filter((item) => {
                     return item !== undefined
@@ -36,7 +42,7 @@ export default function Header() {
                     {(searchquery.length !== 0) ?
                         searchquery.map((item, i) => {
                             return (
-                                <li key={i} onClick={() => { handledisplay(item.Email) }}>
+                                <li key={i} onClick={() => { handledisplay(item) }}>
                                     <img className='search-icon' src="/search.png" alt="" /> <span className='searchitem'>{item.Email}</span>
                                 </li>
                             )

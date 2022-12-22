@@ -1,4 +1,4 @@
-import ContactContext from "./ContactContext";
+import { ContactContext } from "./ContactContext";
 
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
@@ -10,6 +10,7 @@ export default function ContactProvider({ children }) {
         axios.get("http://localhost:8000/contacts", { headers: { authorization: token } }).then((response) => { setcontactdata([...response.data.contacts]) }
         )
     }, [])
+
     return (
         <ContactContext.Provider value={contactdata}>
             {children}

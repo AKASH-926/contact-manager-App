@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
+
 import "./ContactTable.css"
-// import axios from 'axios'
-import ContactContext from '../../Context/ContactContext'
+import { ContactContext, SearchContext } from '../../Context/ContactContext'
 export default function ContactTable() {
 
     const contact = useContext(ContactContext)
-
-
+    const { searchdata, isSearch } = useContext(SearchContext)
+    // console.log(searchdata)
     return (
         <div id='contactTable-wrap'>
             <table id='table-wrap' cellSpacing={0}>
@@ -38,8 +38,22 @@ export default function ContactTable() {
                             <img src="/pencil.png" alt="pencil" />  <img src="/trash.png" alt="trash" />
                         </div></td>
                     </tr> */}
-                    {
-                        contact.map((value, i) => {
+                    {isSearch ?
+
+                        <tr className='table-content-wrap' >
+                            <td><div><input type="checkbox" name="" id="" /></div></td>
+                            <td>{searchdata.Name}</td>
+                            <td>{searchdata.Designation}</td>
+                            <td>{searchdata.Industry}</td>
+                            <td>{searchdata.Company}</td>
+                            <td>{searchdata.Email}</td>
+                            <td>{searchdata.Phone_number}</td>
+                            <td>{searchdata.Country}</td>
+                            <td><div className='edit-del-icon'>
+                                <img src="/pencil.png" alt="pencil" />  <img src="/trash.png" alt="trash" />
+                            </div></td>
+                        </tr>
+                        : contact.map((value, i) => {
                             return (
                                 <tr className='table-content-wrap' key={i}>
                                     <td><div><input type="checkbox" name="" id="" /></div></td>
@@ -59,6 +73,7 @@ export default function ContactTable() {
 
                         )
                     }
+
 
 
 

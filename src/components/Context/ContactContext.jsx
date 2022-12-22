@@ -1,4 +1,5 @@
 import { createContext } from "react";
 
 const ContactContext = createContext()
-export default ContactContext
+const SearchContext = createContext()
+export { ContactContext, SearchContext }  
