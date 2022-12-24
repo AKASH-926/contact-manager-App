@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SearchContext } from './ContactContext'
+import { SearchContext } from './ContactAPI'
 
 export default function SearchProvider({ children }) {
     const [searchdata, setsearchdata] = useState("")

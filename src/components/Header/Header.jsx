@@ -2,12 +2,12 @@ import React, { useContext, useState } from 'react'
 import "./header.css"
 
 
-import { ContactContext, SearchContext } from '../Context/ContactContext'
+import { ContactAPI, SearchContext } from '../Context/ContactAPI'
 export default function Header() {
     const [searchquery, setsearchquery] = useState([])
     const [searchclick, setsearchclick] = useState(true)
     const token = window.localStorage.getItem('jwt')
-    const { contactdata, setcontactdata, pagedcontact, setpagedcontact } = useContext(ContactContext)
+    const { contactdata, setcontactdata, pagedcontact, setpagedcontact } = useContext(ContactAPI)
     const { searchdata, setsearchdata, setisSearch } = useContext(SearchContext)
     const handledisplay = (item) => {
         if (token) {
@@ -16,6 +16,7 @@ export default function Header() {
             setsearchclick(false)
         }
     }
+    let user_display = window.localStorage.getItem('user_name');
     return (
         <div id='header-wrap'>
             <div id='total-contact'>Total Contacts</div>
@@ -54,9 +55,12 @@ export default function Header() {
                 </ul>
 
             </div>
-            <div id='admin' ><img src="/user.png" alt="" /><div id='admin-name'><span>Ram Darvin</span>
-                <span>Super Admin</span></div></div>
-
+            <div id='admin' >
+                <img src="/user.png" alt="" />
+                <div id='admin-name'>
+                    <span>{user_display}</span>
+                    User</div >
+            </div>
         </div>
 
     )

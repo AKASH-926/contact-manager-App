@@ -1,10 +1,10 @@
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import React, { useContext, useEffect, useState } from 'react'
-import { ContactContext } from '../Context/ContactContext'
+import { ContactAPI } from '../Context/ContactAPI'
 import "./Pagination.css"
 export default function Pagination() {
-    const { contactdata, setcontactdata, pagedcontact, setpagedcontact } = useContext(ContactContext)
+    const { contactdata, setcontactdata, pagedcontact, setpagedcontact } = useContext(ContactAPI)
 
     const [pageNo, setPageNo] = useState(1);
     let limit = 10;

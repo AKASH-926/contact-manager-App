@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./utilities.css"
+
+import { importContext } from '../../Context/ContactAPI'
 export default function Utilities() {
+    const { setImportClicked, setDeleteOk } = useContext(importContext)
     return (
         <div id='utility-wrap'>
             <div id='uti-date' className='button-style'> <span>Select Date</span><input type="date" name="select-date" id="select-date" /></div>
@@ -9,10 +12,18 @@ export default function Utilities() {
                 <option value="filter">Aplhabetically</option>
             </select></div>
             <div className='button-style'>
-                <img src="/delete.png" alt="delete" /><button>Delete</button>
+                <img src="/delete.png" alt="delete" /><button onClick={() => {
+                    setImportClicked(false)
+                    setDeleteOk(true)
+                }
+                }>Delete</button>
             </div>
             <div className='button-style'>
-                <img id='export-img' src="/import.png" alt="import" /><button>Import</button>
+                <img id='export-img' src="/import.png" alt="import" /><button onClick={() => {
+                    setImportClicked(true)
+                    setDeleteOk(false)
+                }
+                }>Import</button>
             </div>
             <div id='uti-export' className='button-style'>
                 <img src="/export.png" alt="export" />  <button>Export</button>

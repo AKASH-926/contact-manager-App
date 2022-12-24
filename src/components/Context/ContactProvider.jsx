@@ -1,35 +1,31 @@
-import { ContactContext } from "./ContactContext";
-
-import React, { useEffect, useState } from 'react'
+import { ContactAPI, SearchContext } from "./ContactAPI";
+import { importContext } from "./ContactAPI";
+import React, { useContext, useEffect, useState } from 'react'
 import axios from "axios"
 
 export default function ContactProvider({ children }) {
+
     const [contactdata, setcontactdata] = useState([])
     const [pagedcontact, setpagedcontact] = useState([])
+    const [seldash, setseldash] = useState(false)
+    // const [selcontact, setselcontact] = useState(true)
     const token = window.localStorage.getItem("jwt")
 
-    // useEffect(() => {
-    //     const datafetch = async () => {
-    //         await axios.get("http://localhost:8000/contacts", { headers: { authorization: token } }).then((response) => { console.log(response.data.contacts) })
-    //     }
-    //     datafetch()
-    //     // eslint-disable-next-line 
-    // }, [])
+    const { imported, isDeleted } = useContext(importContext)
+
     useEffect(() => {
         const datafetch = async () => {
-            await axios.get("http://localhost:8000/contacts", { headers: { authorization: token } }).then((response) => { setcontactdata(response.data.contacts) })
+            await axios.get("https://contact-srver-test.onrender.com/contacts", { headers: { authorization: token } }).then((response) => { setcontactdata(response.data.contacts) })
+            console.log(contactdata)
         }
         datafetch()
         // eslint-disable-next-line 
-    }, [])
-
-
-
+    }, [imported, isDeleted, token])
 
 
     return (
-        <ContactContext.Provider value={{ contactdata, setcontactdata, pagedcontact, setpagedcontact }}>
+        <ContactAPI.Provider value={{ contactdata, setcontactdata, pagedcontact, setpagedcontact, seldash, setseldash }}>
             {children}
-        </ContactContext.Provider>
+        </ContactAPI.Provider>
     )
 }
